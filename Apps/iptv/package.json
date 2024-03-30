@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@eva-design/eva": "*",
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
+    "@ui-kitten/components": "*",
     "metro-config": "*",
     "react": "*",
     "react-dom": "*",
     "react-native": "*",
+    "react-native-safe-area-context": "*",
     "expo": "*",
     "react-native-svg": "*",
     "react-native-web": "*"
@@ -16,7 +19,15 @@
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . Apps/iptv && cp yarn.lock Apps/iptv",
     "eas-build-post-install": "cd ../../ && node tools/scripts/eas-build-post-install.mjs . Apps/iptv",
+    "start": "npx expo start",
     "android": "expo run:android",
     "ios": "expo run:ios"
+  },
+  "expo": {
+    "install": {
+      "exclude": [
+        "react-native"
+      ]
+    }
   }
 }

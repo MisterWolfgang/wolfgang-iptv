@@ -1,0 +1,146 @@
+{
+  "root": true,
+  "parser": "@babel/eslint-parser",
+  "ignorePatterns": ["**/*"],
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true,
+        "tsx": true,
+        "modules": true
+    }
+  },
+  "plugins": [
+    "@nx"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "no-multi-spaces": [
+          "error",
+          {
+            "ignoreEOLComments": true
+          }
+        ],
+        "space-infix-ops": [
+          "error"
+        ],
+        "no-template-curly-in-string": [
+          "error"
+        ],
+        "no-unreachable-loop": [
+          "error"
+        ],
+        "no-unsafe-optional-chaining": [
+          "error"
+        ],
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-child-element-spacing": "error",
+        "react/jsx-closing-bracket-location": [
+          "warn",
+          {
+            "nonEmpty": "line-aligned",
+            "selfClosing": "line-aligned"
+          }
+        ],
+        "react/jsx-closing-tag-location": "error",
+        "react/jsx-curly-newline": [
+          "warn",
+          {
+            "multiline": "consistent",
+            "singleline": "consistent"
+          }
+        ],
+        "react/jsx-curly-spacing": [
+          "warn",
+          {
+            "when": "never",
+            "spacing": {
+              "objectLiterals": "never"
+            }
+          }
+        ],
+        "react/jsx-equals-spacing": [
+          "error",
+          "never"
+        ],
+        "react/jsx-first-prop-new-line": [
+          "warn",
+          "multiline"
+        ],
+        "react/jsx-indent": [
+          "error",
+          2,
+          {
+            "indentLogicalExpressions": true
+          }
+        ],
+        "react/jsx-indent-props": [
+          "error",
+          2
+        ],
+        "react/jsx-max-depth": "off",
+        "react/jsx-max-props-per-line": [
+          "warn",
+          {
+            "maximum": 3,
+            "when": "multiline"
+          }
+        ],
+        "react/jsx-newline": [
+          "off",
+          {
+            "prevent": true
+          }
+        ],
+        "react/jsx-props-no-multi-spaces": "off",
+        "react/jsx-sort-props": "off",
+        "react/jsx-tag-spacing": [
+          "error",
+          {
+            "closingSlash": "never",
+            "beforeSelfClosing": "always",
+            "afterOpening": "never",
+            "beforeClosing": "never"
+          }
+        ],
+        "react/jsx-wrap-multilines": [
+          "error",
+          {
+            "declaration": "parens-new-line",
+            "assignment": "parens-new-line",
+            "return": "parens-new-line",
+            "arrow": "parens-new-line",
+            "condition": "parens-new-line",
+            "logical": "parens-new-line",
+            "prop": "parens-new-line"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    }
+  ]
+}
