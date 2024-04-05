@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@eva-design/eva": "*",
-    "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
     "@ui-kitten/components": "*",
     "metro-config": "*",

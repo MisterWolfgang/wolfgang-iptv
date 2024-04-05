@@ -26,7 +26,7 @@ export const App = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#4d3535',
+    backgroundColor: '#141414',
     height: '100%',
     padding: 20,
     gap: 20

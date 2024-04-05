@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Input } from '@ui-kitten/components';
 import { TouchableHighlight } from 'react-native';
 
@@ -9,15 +9,12 @@ export interface IndexProps {
 
 
 export const Index = (props: IndexProps) => {
-  const inputRef = useRef(null);
-  const [focused, setFocused] = useState(false);
+  const inputRef = useRef<Input | null>(null);
 
   return (
     <TouchableHighlight
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
         onPress={() => inputRef.current?.focus()}
-        style={{ borderRadius: 10 }}
+        style={{ borderRadius: 5 }}
     >
       <Input
         ref={inputRef}

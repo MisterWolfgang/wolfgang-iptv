@@ -2,12 +2,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
-    "composite": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noEmit": false,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",

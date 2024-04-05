@@ -5,6 +5,5 @@
     "types": ["node"],
     "declaration": true
   },
-  "exclude": ["**/*.spec.ts", "**/*.spec.tsx", "test-setup.ts"],
   "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }
